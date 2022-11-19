@@ -104,7 +104,7 @@ Please try again!""")
 
 def source_code():
     # Click the 'Source Code' button.
-    open('https://github.com/Python-Object-Developers/All/blob/main/Lottery%20Machine.pyw')
+    open('https://github.com/Python-Object-Developers/All/blob/main/Lottery-Machine.pyw')
 
 
 def end():
