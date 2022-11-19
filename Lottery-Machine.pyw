@@ -65,6 +65,7 @@ def generate():
                     break
             if arg > 66666:
                 showerror(title='Error', message='Something went wrong. Please try again.')
+                return 1
             else:
                 return r
         else:
