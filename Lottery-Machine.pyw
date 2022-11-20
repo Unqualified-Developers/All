@@ -47,56 +47,46 @@ mr.grid(row=2, column=2)
 
 
 def generate():
-    try:
-        a = int(Min.get())
-        b = int(Max.get())
-        n = NShow.get()
-        n_list = n.split(',')
-        r = str(randint(a, b))
-        variable = var.get()
-        arg = 0
-        if variable == 1:
+    a = int(Min.get())
+    b = int(Max.get())
+    n = NShow.get()
+    n_list = n.split(',')
+    r = str(randint(a, b))
+    variable = var.get()
+    arg = 0
+    if variable == 1:
+        num = n_list.count(r)
+        while num != 0:
+            r = str(randint(a, b))
             num = n_list.count(r)
-            while num != 0:
-                r = str(randint(a, b))
-                num = n_list.count(r)
-                arg = arg + 1
-                if arg > 66666:
-                    break
+            arg = arg + 1
             if arg > 66666:
-                showerror(title='Error', message='Something went wrong. Please try again.')
-                return 1
-            else:
-                return r
+                break
+        if arg > 66666:
+            showerror(title='Error', message='Something went wrong. Please try again.')
         else:
             return r
-    except ValueError:
-        showwarning(title='Value', message="""You are humorous, but please don't tell funny jokes here.
-The value you entered is not true, it must be an integer.
-Please try again!""")
-        return 1
+    else:
+        return r
 
 
 def click_generate():
     # Click the 'Generate' button.
-    hmr = hm.get()
-    result = generate()
-    menu = []
     try:
-        if result == 1:
-            pass
-        else:
-            if hmr:
-                hmr_int = int(hmr)
-                if hmr_int >= 1000:
-                    showwarning(title='Times', message='You have generated too much.')
-                else:
-                    for i in range(hmr_int):
-                        result = generate()
-                        menu.append(result)
-                    showinfo(title='Generate', message='Numbers: %s' % str(menu))
+        hmr = hm.get()
+        result = generate()
+        menu = []
+        if hmr:
+            hmr_int = int(hmr)
+            if hmr_int >= 1000:
+                showwarning(title='Times', message='You have generated too much.')
             else:
-                showinfo(title='Generate', message='Number %s' % result)
+                for i in range(hmr_int):
+                    result = generate()
+                    menu.append(int(result))
+                showinfo(title='Generate', message='Numbers: %s' % str(menu))
+        else:
+            showinfo(title='Generate', message='Number %s' % result)
     except ValueError:
         showwarning(title='Value', message="""You are humorous, but please don't tell funny jokes here.
 The value you entered is not true, it must be an integer.
