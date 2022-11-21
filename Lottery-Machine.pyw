@@ -1,6 +1,7 @@
 from random import randint
-from tkinter.messagebox import showinfo, showerror, showwarning
+from tkinter.messagebox import showinfo, showwarning
 from ttkbootstrap import Window, Toplevel, Label, Button, Entry, Radiobutton, IntVar, Checkbutton
+from ttkbootstrap.constants import END
 from webbrowser import open
 
 # Initialize the root window.
@@ -63,7 +64,7 @@ def generate():
             if arg > 66666:
                 break
         if arg > 66666:
-            showerror(title='Error', message='Something went wrong. Please try again.')
+            raise ValueError
         else:
             return r
     else:
@@ -84,9 +85,9 @@ def click_generate():
                 for i in range(hmr_int):
                     result = generate()
                     menu.append(int(result))
-                showinfo(title='Generate', message='Numbers: %s' % str(menu))
+                showinfo(title='Generate', message='Numbers: %s.' % str(menu))
         else:
-            showinfo(title='Generate', message='Number %s' % result)
+            showinfo(title='Generate', message='Number %s.' % result)
     except ValueError:
         showwarning(title='Value', message="""You are humorous, but please don't tell funny jokes here.
 The value you entered is not true, it must be an integer.
