@@ -1,7 +1,6 @@
 from random import randint
 from tkinter.messagebox import showinfo, showwarning
 from ttkbootstrap import Window, Toplevel, Label, Button, Entry, Radiobutton, IntVar, Checkbutton
-from ttkbootstrap.constants import END
 from webbrowser import open
 
 # Initialize the root window.
