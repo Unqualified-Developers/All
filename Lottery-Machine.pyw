@@ -46,8 +46,7 @@ mr = Checkbutton(r_win, text='Generate+', command=c_show)
 mr.grid(row=2, column=2)
 
 
-def generate(a, b, n, variable):
-    n_list = n.split(',')
+def generate(a, b, n_list, variable):
     r = str(randint(a, b))
     arg = 0
     if variable == 1:
@@ -74,12 +73,17 @@ def click_generate():
         n = NShow.get()
         hmr = hm.get()
         variable = var.get()
-        result = generate(a, b, n, variable)
+        n_list = n.split(',')
+        result = generate(a, b, n_list, variable)
         menu = []
         if hmr:
             hmr_int = int(hmr)
             if hmr_int >= 1000:
                 showwarning(title='Times', message='You have generated too much.')
+            elif hmr_int == 0:
+                showinfo(title='Information', message='What do you want to do?')
+            elif hmr_int == 1:
+                showinfo(title='Generate', message='Number %s.' % result)
             else:
                 for i in range(hmr_int):
                     result = generate(a, b, n, variable)
