@@ -80,8 +80,8 @@ def click_generate():
             hmr_int = int(hmr)
             if hmr_int >= 1000:
                 showwarning(title='Times', message='You have generated too much.')
-            elif hmr_int == 0:
-                showinfo(title='Information', message='What do you want to do?')
+            elif hmr_int <= 0:
+                showinfo(title='Message', message='What do you want to do?')
             elif hmr_int == 1:
                 showinfo(title='Generate', message='Number %s.' % result)
             else:
