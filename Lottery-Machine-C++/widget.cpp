@@ -27,7 +27,7 @@ void Widget::on_quib_clicked()
 void Widget::on_genb_clicked()
 {
     int mi=ui->mine->text().toInt();
-    int ma=ui->maxe->text().toInt();
+    int ma=ui->maxe->text().toInt()+1;
     int r=QRandomGenerator::global()->bounded(mi,ma)-49;
     char rc=r + '0';
     QMessageBox::information(this, tr("Generate"),tr("Number %1.").arg(rc+1),QMessageBox::Ok,QMessageBox::NoButton);
