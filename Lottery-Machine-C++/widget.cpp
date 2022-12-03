@@ -1,7 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include <QMessageBox>
-#include<QRandomGenerator>
+#include <QRandomGenerator>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
