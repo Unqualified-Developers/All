@@ -20,6 +20,8 @@ private slots:
 
     void on_quib_clicked();
 
+    void on_gas_clicked();
+
 private:
     Ui::Widget *ui;
 };
