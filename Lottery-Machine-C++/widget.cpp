@@ -20,8 +20,6 @@ Widget::~Widget()
     delete ui;
 }
 
-int speakvar=0;
-
 int generate(int min,int max,int n)
 {
     int r=min+rand()%(max-min+1);
@@ -50,19 +48,12 @@ void Widget::on_genb_clicked()
 void Widget::on_gas_clicked()
 {
     QTextToSpeech *speech;
-    speakvar=speakvar+1;
-    if(speakvar>=3)
-    {
-        ui->gas->setEnabled(false);
-    }
-    else
-    {
-        speech=new QTextToSpeech;
-        int mi=ui->mine->text().toInt();
-        int ma=ui->maxe->text().toInt();
-        int n=ui->noe->text().toInt();
-        int r=generate(mi,ma,n)+48;
-        QString sr=QString("%1").arg(r+1);
-        speech->say(sr);
-    }
+    speech=new QTextToSpeech;
+    int mi=ui->mine->text().toInt();
+    int ma=ui->maxe->text().toInt();
+    int n=ui->noe->text().toInt();
+    int r=generate(mi,ma,n)+48;
+    QString sr=QString("%1").arg(r+1);
+    speech->say(sr);
+    ui->gas->setEnabled(false);
 }
