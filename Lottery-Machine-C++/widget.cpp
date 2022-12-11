@@ -22,10 +22,14 @@ Widget::~Widget()
 
 int speakvar=0;
 
-int generate(int min,int max)
+int generate(int min,int max,int n)
 {
-    int r=min+rand()%(max-min+1)-49;
-    return r;
+    int r=min+rand()%(max-min+1);
+    while (r==n)
+    {
+        r=min+rand()%(max-min+1);
+    }
+    return r-49;
 }
 
 void Widget::on_quib_clicked()
@@ -37,7 +41,8 @@ void Widget::on_genb_clicked()
 {
     int mi=ui->mine->text().toInt();
     int ma=ui->maxe->text().toInt();
-    int r=generate(mi,ma);
+    int n=ui->noe->text().toInt();
+    int r=generate(mi,ma,n);
     char rc=r+'0';
     QMessageBox::information(this, tr("Generate"),tr("Number %1.").arg(rc+1),QMessageBox::Ok,QMessageBox::NoButton);
 }
@@ -55,7 +60,8 @@ void Widget::on_gas_clicked()
         speech=new QTextToSpeech;
         int mi=ui->mine->text().toInt();
         int ma=ui->maxe->text().toInt();
-        int r=generate(mi,ma)+48;
+        int n=ui->noe->text().toInt();
+        int r=generate(mi,ma,n)+48;
         QString sr=QString("%1").arg(r+1);
         speech->say(sr);
     }

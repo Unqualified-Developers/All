@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>288</width>
-    <height>165</height>
+    <width>344</width>
+    <height>214</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,6 +39,20 @@
      </item>
      <item>
       <widget class="QLineEdit" name="maxe"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Don't want to see:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="noe"/>
      </item>
     </layout>
    </item>
