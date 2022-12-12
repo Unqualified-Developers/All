@@ -53,7 +53,7 @@ void Widget::on_gas_clicked()
     int ma=ui->maxe->text().toInt();
     int n=ui->noe->text().toInt();
     int r=generate(mi,ma,n)+48;
-    QString sr=QString("%1").arg(r+1);
+    QString sr=QString("%1").arg(r);
     speech->say(sr);
     ui->gas->setEnabled(false);
 }
