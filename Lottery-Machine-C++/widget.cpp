@@ -40,9 +40,16 @@ void Widget::on_genb_clicked()
     int mi=ui->mine->text().toInt();
     int ma=ui->maxe->text().toInt();
     int n=ui->noe->text().toInt();
-    int r=generate(mi,ma,n);
-    char rc=r+'0';
-    QMessageBox::information(this, tr("Generate"),tr("Number %1.").arg(rc+1),QMessageBox::Ok,QMessageBox::NoButton);
+    if(mi&&ma)
+    {
+        int r=generate(mi,ma,n);
+        char rc=r+'0';
+        QMessageBox::information(this, tr("Generate"),tr("Number %1.").arg(rc+1),QMessageBox::Ok,QMessageBox::NoButton);
+    }
+    else
+    {
+        QMessageBox::question(this, tr("Input"),tr("Where is the value?"),QMessageBox::Ok,QMessageBox::NoButton);
+    }
 }
 
 void Widget::on_gas_clicked()
@@ -52,8 +59,15 @@ void Widget::on_gas_clicked()
     int mi=ui->mine->text().toInt();
     int ma=ui->maxe->text().toInt();
     int n=ui->noe->text().toInt();
-    int r=generate(mi,ma,n)+49;
-    QString sr=QString("%1").arg(r);
-    speech->say(sr);
-    ui->gas->setEnabled(false);
+    if(mi&&ma)
+    {
+        int r=generate(mi,ma,n)+49;
+        QString sr=QString("%1").arg(r);
+        speech->say(sr);
+        ui->gas->setEnabled(false);
+    }
+    else
+    {
+        QMessageBox::question(this, tr("Input"),tr("Where is the value?"),QMessageBox::Ok,QMessageBox::NoButton);
+    }
 }
