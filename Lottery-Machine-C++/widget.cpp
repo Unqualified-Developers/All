@@ -29,7 +29,7 @@ int generate(int min,int max,int n)
     {
         r=min+rand()%(max-min+1);
         i++;
-        if(i>=9999)
+        if(i>=10000000)
         {
             return -1;
         }
