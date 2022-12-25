@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <QtTextToSpeech/QTextToSpeech>
 
+int min,max;
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -75,16 +77,24 @@ void Widget::on_gas_clicked()
     int n=ui->noe->text().toInt();
     if(mi&&ma)
     {
-        int r=generate(mi,ma,n);
-        if(r==-1)
+        if(mi==min&&ma==max)
         {
-            speech->say("This is not a joke.");
+            speech->say("The button is not available!");
         }
         else
         {
-            QString sr=QString("%1").arg(r+49);
-            speech->say(sr);
-            ui->gas->setEnabled(false);
+            int r=generate(mi,ma,n);
+            if(r==-1)
+            {
+                speech->say("I'm not joking.");
+            }
+            else
+            {
+                min=mi;
+                max=ma;
+                QString sr=QString("%1").arg(r+49);
+                speech->say(sr);
+            }
         }
     }
     else
