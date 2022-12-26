@@ -79,7 +79,7 @@ void Widget::on_gas_clicked()
     {
         if(mi==min&&ma==max)
         {
-            speech->say("The button is not available!");
+            speech->say("The button is not available!");  //Please try to change the value of the first two arguments or reopen the application when it happens.
         }
         else
         {
