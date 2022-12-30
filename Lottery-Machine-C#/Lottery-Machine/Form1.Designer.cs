@@ -34,6 +34,8 @@
             this.maxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dwst = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,9 +51,9 @@
             // mint
             // 
             this.mint.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.mint.Location = new System.Drawing.Point(93, 14);
+            this.mint.Location = new System.Drawing.Point(95, 12);
             this.mint.Name = "mint";
-            this.mint.Size = new System.Drawing.Size(209, 25);
+            this.mint.Size = new System.Drawing.Size(241, 25);
             this.mint.TabIndex = 1;
             // 
             // label2
@@ -67,15 +69,15 @@
             // maxt
             // 
             this.maxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.maxt.Location = new System.Drawing.Point(93, 53);
+            this.maxt.Location = new System.Drawing.Point(95, 50);
             this.maxt.Name = "maxt";
-            this.maxt.Size = new System.Drawing.Size(209, 25);
+            this.maxt.Size = new System.Drawing.Size(241, 25);
             this.maxt.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 87);
+            this.button1.Location = new System.Drawing.Point(13, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 29);
             this.button1.TabIndex = 4;
@@ -86,7 +88,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(186, 87);
+            this.button2.Location = new System.Drawing.Point(220, 128);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 29);
             this.button2.TabIndex = 5;
@@ -94,11 +96,31 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(9, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Don\'t want to see:";
+            // 
+            // dwst
+            // 
+            this.dwst.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dwst.Location = new System.Drawing.Point(146, 90);
+            this.dwst.Name = "dwst";
+            this.dwst.Size = new System.Drawing.Size(190, 25);
+            this.dwst.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 129);
+            this.ClientSize = new System.Drawing.Size(346, 165);
+            this.Controls.Add(this.dwst);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.maxt);
@@ -120,6 +142,8 @@
         private System.Windows.Forms.TextBox maxt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox dwst;
     }
 }
 
