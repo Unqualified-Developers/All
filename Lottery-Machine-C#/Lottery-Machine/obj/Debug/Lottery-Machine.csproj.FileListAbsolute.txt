@@ -1,0 +1,11 @@
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\bin\Debug\Lottery-Machine.exe.config
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\bin\Debug\Lottery-Machine.exe
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\bin\Debug\Lottery-Machine.pdb
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.csproj.SuggestedBindingRedirects.cache
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery_Machine.Form1.resources
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery_Machine.Properties.Resources.resources
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.csproj.GenerateResource.cache
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.exe
+C:\Users\LENOVO\source\repos\Lottery-Machine\Lottery-Machine\obj\Debug\Lottery-Machine.pdb
