@@ -15,14 +15,14 @@ namespace Lottery_Machine
             int i = 0;
             Random r = new Random();
             int re = r.Next(min, max + 1);
-            while(re==n && i<=10000000)
+            while((re==n) && i<=10000000)
             {
                 re = r.Next(min, max + 1);
                 i++;
             }
             if(i>=10000000)
             {
-                return -1;
+                return -2147483648;
             }
             else
             {
@@ -47,24 +47,38 @@ namespace Lottery_Machine
             {
                 mini = int.Parse(mins);
                 maxi = int.Parse(maxs);
-                if (dwsb == false)
+                if (mini<=maxi)
                 {
-                    dwsi = -2147483648;
+                    if (dwsb == false)
+                    {
+                        dwsi = -2147483648;
+                    }
+                    else
+                    {
+                        dwsi = int.Parse(dwss);
+                    }
+                    Random rd = new Random();
+                    int r = generate(mini, maxi, dwsi);
+                    if (mini == -2147483648 || maxi == -2147483648)
+                    {
+                        MessageBox.Show("The value you entered is not in the valid range.\nValid range: - 2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (r == -2147483648)
+                        {
+                            MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            string rs = r.ToString();
+                            MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information);
+                        }
+                    }
                 }
                 else
                 {
-                    dwsi = int.Parse(dwss);
-                }
-                Random rd = new Random();
-                int r = generate(mini, maxi, dwsi);
-                if (r==-1)
-                {
-                    MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    string rs = r.ToString();
-                    MessageBox.Show($"Number {rs}.", "Generate", 0, MessageBoxIcon.Information);
+                    MessageBox.Show("Why did 'Minimum' < 'Maximum'?", "Check", 0, MessageBoxIcon.Warning);
                 }
             }
             else
