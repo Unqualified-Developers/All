@@ -71,7 +71,6 @@ namespace Lottery_Machine
                         }
                         else
                         {
-                            string rs = r.ToString();
                             MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information);
                         }
                     }
