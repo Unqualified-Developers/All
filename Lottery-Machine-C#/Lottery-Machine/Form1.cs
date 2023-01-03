@@ -29,6 +29,7 @@ namespace Lottery_Machine
                 return re;
             }
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
@@ -40,7 +41,7 @@ namespace Lottery_Machine
             string maxs = maxt.Text.ToString();
             string dwss = dwst.Text.ToString();
             int mini, maxi, dwsi;
-            bool minb = int.TryParse(mins,out mini);
+            bool minb = int.TryParse(mins, out mini);
             bool maxb = int.TryParse(maxs, out maxi);
             bool dwsb = int.TryParse(dwss, out dwsi);
             if (minb==true && maxb==true)
