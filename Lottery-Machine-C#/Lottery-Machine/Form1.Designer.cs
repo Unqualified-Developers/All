@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dwst = new System.Windows.Forms.TextBox();
+            this.quat = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 128);
+            this.button1.Location = new System.Drawing.Point(12, 171);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 29);
             this.button1.TabIndex = 4;
@@ -88,7 +90,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(220, 128);
+            this.button2.Location = new System.Drawing.Point(220, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 29);
             this.button2.TabIndex = 5;
@@ -114,11 +116,31 @@
             this.dwst.Size = new System.Drawing.Size(190, 25);
             this.dwst.TabIndex = 7;
             // 
+            // quat
+            // 
+            this.quat.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.quat.Location = new System.Drawing.Point(95, 128);
+            this.quat.Name = "quat";
+            this.quat.Size = new System.Drawing.Size(241, 25);
+            this.quat.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(23, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Quality:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 165);
+            this.ClientSize = new System.Drawing.Size(346, 208);
+            this.Controls.Add(this.quat);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dwst);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -144,6 +166,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox dwst;
+        private System.Windows.Forms.TextBox quat;
+        private System.Windows.Forms.Label label4;
     }
 }
 
