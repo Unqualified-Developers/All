@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Lottery_Machine
@@ -17,7 +15,7 @@ namespace Lottery_Machine
             int i = 0;
             Random r = new Random();
             int re = r.Next(min, max + 1);
-            while((re==n) && i<=10000000)
+            while((re == n) && i<=10000000)
             {
                 re = r.Next(min, max + 1);
                 i++;
@@ -90,7 +88,7 @@ namespace Lottery_Machine
                             else if (quai != 1)
                             {
                                 int[] rl = new int[quai];
-                                for (int i = 0; i <= quai-1; i++)
+                                for (int i = 0; i < quai; i++)
                                 {
                                     r = generate(mini, maxi, dwsi);
                                     rl[i] = r;
