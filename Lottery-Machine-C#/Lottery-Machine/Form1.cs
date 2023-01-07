@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace Lottery_Machine
@@ -10,14 +10,15 @@ namespace Lottery_Machine
             InitializeComponent();
         }
 
-        public int generate(int min, int max, int n)
+        public int generate(int min, int max, string[] n, Random r)
         {
             int i = 0;
-            Random r = new Random();
             int re = r.Next(min, max + 1);
-            while((re == n) && i<=10000000)
+            int num = Array.IndexOf(n, re.ToString());
+            while ((num >= 0) && i<=10000000)
             {
                 re = r.Next(min, max + 1);
+                num = Array.IndexOf(n, re.ToString());
                 i++;
             }
             if(i>=10000000)
@@ -37,29 +38,22 @@ namespace Lottery_Machine
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Random rd = new Random();
             string mins = mint.Text.ToString();
             string maxs = maxt.Text.ToString();
             string dwss = dwst.Text.ToString();
             string quas = quat.Text.ToString();
-            int mini, maxi, dwsi, quai;
+            string[] nl = dwss.Split(' ');
+            int mini, maxi, quai;
             bool minb = int.TryParse(mins, out mini);
             bool maxb = int.TryParse(maxs, out maxi);
-            bool dwsb = int.TryParse(dwss, out dwsi);
             bool quab = int.TryParse(quas, out quai);
             if (minb==true && maxb==true)
             {
                 mini = int.Parse(mins);
                 maxi = int.Parse(maxs);
                 if (mini<=maxi)
-                {
-                    if (dwsb == false)
-                    {
-                        dwsi = -2147483648;
-                    }
-                    else
-                    {
-                        dwsi = int.Parse(dwss);
-                    }
+                {                    
                     if (quab == false)
                     {
                         quai = 1;
@@ -68,7 +62,7 @@ namespace Lottery_Machine
                     {
                         quai = int.Parse(quas);
                     }
-                    int r = generate(mini, maxi, dwsi);
+                    int r = generate(mini, maxi, nl, rd);
                     if (mini == -2147483648 || maxi == -2147483648)
                     {
                         MessageBox.Show("The value of 'Don't want to see' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning);
@@ -90,11 +84,11 @@ namespace Lottery_Machine
                                 int[] rl = new int[quai];
                                 for (int i = 0; i < quai; i++)
                                 {
-                                    r = generate(mini, maxi, dwsi);
+                                    r = generate(mini, maxi, nl, rd);
                                     rl[i] = r;
                                 }
                                 string result = String.Join(", ", rl);
-                                MessageBox.Show($"Numbers:{result}.", "Generate", 0, MessageBoxIcon.Information);
+                                MessageBox.Show($"Numbers: {result}.", "Generate", 0, MessageBoxIcon.Information);
                             } 
                             else
                             {
