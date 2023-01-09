@@ -10,6 +10,14 @@ namespace Lottery_Machine
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is a function that can generate random numbers.
+        /// </summary>
+        /// <param name="min">The minimum value of random numbers.</param>
+        /// <param name="max">The maximum value of random numbers.</param>
+        /// <param name="n">The value that you don't want to see.</param>
+        /// <param name="r">Expected random object.</param>
+        /// <returns>The result.</returns>
         public int generate(int min, int max, string[] n, Random r)
         {
             int i = 0;
