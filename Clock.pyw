@@ -15,17 +15,14 @@ def start():
     t = 0
     button.pack_forget()
     s.pack()
-    while True:
-        time = str(datetime.now())
-        label.config(text=time)
+    while t != 1:
+        label.config(text=str(datetime.now()))
         root.update()
-        if t == -1:
-            break
 
 
 def stop():
     global t
-    t = -1
+    t = 1
     s.pack_forget()
     button.pack()
 
